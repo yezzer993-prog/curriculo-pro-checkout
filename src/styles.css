@@ -30,7 +30,7 @@ button, input { font: inherit; } button { touch-action: manipulation; }
 .brand-icon { display: grid; place-items: center; width: 38px; height: 40px; background: var(--primary); color: var(--primary-foreground); border-radius: 8px; }
 .funnel-header h1 { font-size: 25px; line-height: 1.3; font-weight: 750; margin: 0 0 9px; }
 .funnel-header p { color: var(--muted-foreground); font-size: 14px; line-height: 1.65; margin: 0 auto; max-width: 360px; }
-.funnel-shell { width: 100%; max-width: 448px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+.funnel-shell { width: 100%; max-width: 448px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); scroll-margin-top: 14px; }
 .progress-track { height: 4px; background: var(--secondary); }.progress-fill { height: 100%; background: var(--primary); transition: width .35s; }.progress-20 {width:20%}.progress-40 {width:40%}.progress-60 {width:60%}.progress-80 {width:80%}.progress-100 {width:100%}
 .funnel-content { padding: 24px; min-height: 390px; }.step-caption { display: flex; justify-content: space-between; color: var(--muted-foreground); font-size: 10px; font-weight: 650; margin-bottom: 25px; }
 .step-section { animation: step-in .3s ease; }.step-section h2 { font-size: 20px; font-weight: 750; line-height: 1.4; margin: 0 0 22px; text-align: center; }

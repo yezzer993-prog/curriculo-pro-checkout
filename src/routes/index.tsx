@@ -31,7 +31,11 @@ function Index() {
   const [color, setColor] = useState("blue");
   const [checkout, setCheckout] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const shellRef = useRef<HTMLElement | null>(null);
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  useEffect(() => {
+    if (step > 0) shellRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [step]);
   const question = questions[step];
   const selectedModel = resumeSuggestions[modelIndex]?.model ?? "Moderno";
   const customValue = custom[step] ?? "";
@@ -54,7 +58,7 @@ function Index() {
       <h1>Currículo pronto em 3 minutos</h1>
       <p>Crie um currículo profissional rapidamente e emita seu PDF instantaneamente.</p>
     </header>
-    <main className="funnel-shell">
+    <main className="funnel-shell" ref={shellRef}>
       <div className="progress-track" role="progressbar" aria-label="Progresso do perfil" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}><div className={`progress-fill progress-${progress}`} /></div>
       <div className={`funnel-content ${step === 6 ? "result-content" : ""}`}>
         {step < 5 && <div className="step-caption"><span>SEU PERFIL PROFISSIONAL</span><span>0{step + 1} <span className="text-muted-foreground">/ 05</span></span></div>}

@@ -77,7 +77,7 @@ function Index() {
           </form>
         </section>}
         {step === 4 && <section className="step-section model-section">
-          <div className="text-center"><span className="eyebrow">Pré-visualização</span><h2>Qual visual mais combina com você?</h2><p className="model-subtitle">Escolha o seu favorito</p></div>
+          <div className="text-center"><span className="eyebrow">Pré-visualização</span><h2>Qual visual mais combina com você?</h2><p className="model-subtitle">Escolha o Design que mais combina com você</p></div>
           <div className="model-picker">
             <div className="phone-mockup"><div className="phone-island" /><div className="phone-header"><FileText size={12} /> Currículo Pro</div>
               <div className="phone-preview">

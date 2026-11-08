@@ -31,7 +31,11 @@ function Index() {
   const [color, setColor] = useState("blue");
   const [checkout, setCheckout] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const shellRef = useRef<HTMLElement | null>(null);
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  useEffect(() => {
+    if (step > 0) shellRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [step]);
   const question = questions[step];
   const selectedModel = resumeSuggestions[modelIndex]?.model ?? "Moderno";
   const customValue = custom[step] ?? "";

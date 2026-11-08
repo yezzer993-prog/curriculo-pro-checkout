@@ -110,7 +110,7 @@ function Index() {
           <p className="secure-note"><ShieldCheck size={12} /> Pagamento 100% Seguro via PIX/Cartão</p>
         </section>}
       </div>
-      {step < 5 && <footer className="funnel-nav"><Button variant="ghost" className={step === 0 ? "invisible" : ""} onClick={() => setStep(step - 1)}><ArrowLeft /> Voltar</Button></footer>}
+      {step < 5 && <footer className="funnel-nav"><Button variant="ghost" className={step === 0 ? "invisible" : ""} onClick={() => setStep(step - 1)}><ArrowLeft /> Voltar</Button>{step === 4 && <Button className="nav-next" onClick={() => advance(selectedModel)}>Continuar <ArrowRight /></Button>}</footer>}
     </main>
     <p className="page-trust"><ShieldCheck size={14} /> Seu próximo passo profissional começa aqui.</p>
     <Dialog open={checkout} onOpenChange={setCheckout}><DialogContent className="flex flex-col gap-2 p-3 w-[96vw] max-w-lg h-[92vh]"><DialogTitle className="text-center text-lg font-extrabold">Finalize seu pagamento</DialogTitle><DialogDescription className="sr-only">Checkout seguro de pagamento</DialogDescription><LowifyCheckout /></DialogContent></Dialog>

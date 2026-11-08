@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, BrushCleaning, Check, ChevronLeft, ChevronRight, FileText, Hammer, LockKeyhole, LoaderCircle, Paintbrush, PenTool, ShieldCheck, Sparkles, Store, Utensils, Bot, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { PixCheckout } from "@/components/pix-checkout";
+import { LowifyCheckout } from "@/components/lowify-checkout";
 import { ResumePreview, resumeColors, resumeSuggestions } from "@/components/resume-preview";
 
 export const Route = createFileRoute("/")({
@@ -109,6 +109,6 @@ function Index() {
       {step < 5 && <footer className="funnel-nav"><Button variant="ghost" className={step === 0 ? "invisible" : ""} onClick={() => setStep(step - 1)}><ArrowLeft /> Voltar</Button><Button onClick={() => advance(custom[step]?.trim() || answers[step] || ["Áreas Diversas", "Não especificado", "Dificuldade de estruturação", "Não especificado"][step] || selectedModel)}>{step === 4 ? "Escolher modelo" : "Avançar"}<ArrowRight /></Button></footer>}
     </main>
     <p className="page-trust"><ShieldCheck size={14} /> Seu próximo passo profissional começa aqui.</p>
-    <Dialog open={checkout} onOpenChange={setCheckout}><DialogContent className="checkout-sheet"><div className="checkout-mark"><Sparkles size={22} /></div><DialogTitle className="text-center text-2xl font-extrabold">Falta pouco!</DialogTitle><DialogDescription className="text-center">Para onde devemos enviar seu acesso e recibo?</DialogDescription><PixCheckout /></DialogContent></Dialog>
+    <Dialog open={checkout} onOpenChange={setCheckout}><DialogContent className="checkout-sheet"><div className="checkout-mark"><Sparkles size={22} /></div><DialogTitle className="text-center text-2xl font-extrabold">Falta pouco!</DialogTitle><DialogDescription className="text-center">Para onde devemos enviar seu acesso e recibo?</DialogDescription><LowifyCheckout /></DialogContent></Dialog>
   </div>;
 }

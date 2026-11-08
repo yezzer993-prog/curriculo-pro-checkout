@@ -109,6 +109,6 @@ function Index() {
       {step < 5 && <footer className="funnel-nav"><Button variant="ghost" className={step === 0 ? "invisible" : ""} onClick={() => setStep(step - 1)}><ArrowLeft /> Voltar</Button><Button onClick={() => advance(custom[step]?.trim() || answers[step] || ["Áreas Diversas", "Não especificado", "Dificuldade de estruturação", "Não especificado"][step] || selectedModel)}>{step === 4 ? "Escolher modelo" : "Avançar"}<ArrowRight /></Button></footer>}
     </main>
     <p className="page-trust"><ShieldCheck size={14} /> Seu próximo passo profissional começa aqui.</p>
-    <Dialog open={checkout} onOpenChange={setCheckout}><DialogContent className="checkout-sheet"><div className="checkout-mark"><Sparkles size={22} /></div><DialogTitle className="text-center text-2xl font-extrabold">Falta pouco!</DialogTitle><DialogDescription className="text-center">Para onde devemos enviar seu acesso e recibo?</DialogDescription><LowifyCheckout /></DialogContent></Dialog>
+    <Dialog open={checkout} onOpenChange={setCheckout}><DialogContent className="flex flex-col gap-2 p-3 w-[96vw] max-w-lg h-[92vh]"><DialogTitle className="text-center text-lg font-extrabold">Finalize seu pagamento</DialogTitle><DialogDescription className="sr-only">Checkout seguro de pagamento</DialogDescription><LowifyCheckout /></DialogContent></Dialog>
   </div>;
 }

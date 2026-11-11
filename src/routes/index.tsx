@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, BrushCleaning, Check, ChevronLeft, ChevronRight,
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { LowifyCheckout } from "@/components/lowify-checkout";
+import { SiteFooter } from "@/components/site-footer";
 import { ResumePreview, resumeColors, resumeSuggestions } from "@/components/resume-preview";
 
 export const Route = createFileRoute("/")({
@@ -113,6 +114,17 @@ function Index() {
       {step < 5 && <footer className="funnel-nav"><Button variant="ghost" className={step === 0 ? "invisible" : ""} onClick={() => setStep(step - 1)}><ArrowLeft /> Voltar</Button>{step === 4 && <Button className="nav-next" onClick={() => advance(selectedModel)}>Continuar <ArrowRight /></Button>}</footer>}
     </main>
     <p className="page-trust"><ShieldCheck size={14} /> Seu próximo passo profissional começa aqui.</p>
+    <section className="mx-auto mt-10 w-full max-w-xl px-4 text-center">
+      <h2 className="text-2xl font-extrabold text-foreground">Como funciona o CurrículoPro</h2>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">O CurrículoPro é uma plataforma digital que auxilia você a criar, formatar e estruturar um currículo profissional completo em apenas 3 minutos. Preencha suas informações em nosso guia passo a passo e receba o arquivo final em formato PDF pronto para impressão ou envio imediato para recrutadores.</p>
+      <div className="mt-6 rounded-2xl border-2 border-primary/30 bg-card p-6 shadow-sm">
+        <p className="text-sm font-semibold text-foreground">Emissão e Download Instantâneo do Currículo em PDF</p>
+        <p className="mt-2 text-xs uppercase tracking-wide text-muted-foreground">Pagamento único de</p>
+        <p className="text-4xl font-extrabold text-primary">R$ 15,29</p>
+        <p className="mt-3 text-sm text-muted-foreground">Sem assinatura ou cobranças recorrentes. Liberação imediata após a confirmação do pagamento.</p>
+      </div>
+    </section>
+    <SiteFooter />
     <Dialog open={checkout} onOpenChange={setCheckout}><DialogContent className="flex flex-col gap-2 p-3 w-[96vw] max-w-lg h-[92vh]"><DialogTitle className="text-center text-lg font-extrabold">Finalize seu pagamento</DialogTitle><DialogDescription className="sr-only">Checkout seguro de pagamento</DialogDescription><LowifyCheckout /></DialogContent></Dialog>
   </div>;
 }
